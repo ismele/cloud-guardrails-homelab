@@ -1,0 +1,12 @@
+[Unit]
+Description=Prometheus node_exporter
+After=network-online.target
+
+[Service]
+User=prometheus
+# Bound to localhost only: nothing outside the server can read raw host metrics.
+ExecStart=/usr/local/bin/node_exporter --web.listen-address=127.0.0.1:9100
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

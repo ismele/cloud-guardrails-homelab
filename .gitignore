@@ -1,0 +1,8 @@
+# never commit keys or secrets
+*.key
+*.pem
+*.crt
+*.p12
+.env
+*.tfstate*
+.DS_Store
